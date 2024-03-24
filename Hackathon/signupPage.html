@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Page</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS file for styling -->
+</head>
+<body>
+    <div class="flex-container">
+        <!-- Image Container -->
+        <div class="image-container">
+            <img src="images/logo.jpeg" alt="Descriptive Text" style="width: 100%; height: auto;">
+        </div>
+
+    <div class="login-container">
+        <h2>Sign Up</h2>
+        <form id="loginForm" class ="form"> 
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Sign Up</button>
+            <script> 
+                document.getElementById("loginForm").addEventListener("submit", function(event) {
+                    event.preventDefault(); // Prevent default form submission
+                    
+                    // Get input values
+                    const username = document.getElementById("username").value;
+                    const password = document.getElementById("password").value;
+
+            // Store new username and password in localStorage
+            localStorage.setItem("username", username);
+            localStorage.setItem("password", password);
+
+            alert("Signup successful!"); // Display success message
+            window.location.href="loginPage.html";
+        });
+            </script>
+        </form>
+    </div>
+</body>
+</html>

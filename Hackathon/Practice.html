@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Change Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class ="quizBody">
+    <h1 class ="quizH" >Climate Change Quiz</h1>
+    
+    <form id="quizForm" class = "quizForm">
+        <h2 class = "quizHeader">Question 1: What is the primary greenhouse gas responsible for climate change?</h2>
+        <input type="radio" name="question1" value="carbon_dioxide" id="q1a">
+        <label for="q1a">Carbon dioxide</label><br>
+        <input type="radio" name="question1" value="methane" id="q1b">
+        <label for="q1b">Methane</label><br>
+        <input type="radio" name="question1" value="nitrous_oxide" id="q1c">
+        <label for="q1c">Nitrous oxide</label><br>
+        <input type="radio" name="question1" value="ozone" id="q1d">
+        <label for="q1d">Ozone</label><br>
+        
+        <h2>Question 2: Which of the following activities contributes the most to greenhouse gas emissions?</h2>
+        <input type="radio" name="question2" value="transportation" id="q2a">
+        <label for="q2a">Transportation</label><br>
+        <input type="radio" name="question2" value="agriculture" id="q2b">
+        <label for="q2b">Agriculture</label><br>
+        <input type="radio" name="question2" value="energy_production" id="q2c">
+        <label for="q2c">Energy production</label><br>
+        <input type="radio" name="question2" value="deforestation" id="q2d">
+        <label for="q2d">Deforestation</label><br>
+        
+        <h2>Question 3: What is the main cause of sea level rise?</h2>
+        <input type="radio" name="question3" value="thermal_expansion" id="q3a">
+        <label for="q3a">Thermal expansion</label><br>
+        <input type="radio" name="question3" value="melting_ice_sheets" id="q3b">
+        <label for="q3b">Melting ice sheets</label><br>
+        <input type="radio" name="question3" value="glacial_melting" id="q3c">
+        <label for="q3c">Glacial melting</label><br>
+        <input type="radio" name="question3" value="all_of_the_above" id="q3d">
+        <label for="q3d">All of the above</label><br>
+        
+        <h2>Question 4: What is a major consequence of ocean acidification?</h2>
+        <input type="radio" name="question4" value="coral_bleaching" id="q4a">
+        <label for="q4a">Coral bleaching</label><br>
+        <input type="radio" name="question4" value="decreased_fish_population" id="q4b">
+        <label for="q4b">Decreased fish population</label><br>
+        <input type="radio" name="question4" value="disruption_of_marine_ecosystems" id="q4c">
+        <label for="q4c">Disruption of marine ecosystems</label><br>
+        <input type="radio" name="question4" value="all_of_the_above" id="q4d">
+        <label for="q4d">All of the above</label><br>
+        
+        <h2>Question 5: Which international agreement aims to combat climate change?</h2>
+        <input type="radio" name="question5" value="paris_agreement" id="q5a">
+        <label for="q5a">Paris Agreement</label><br>
+        <input type="radio" name="question5" value="kyoto_protocol" id="q5b">
+        <label for="q5b">Kyoto Protocol</label><br>
+        <input type="radio" name="question5" value="montreal_protocol" id="q5c">
+        <label for="q5c">Montreal Protocol</label><br>
+        <input type="radio" name="question5" value="washington_agreement" id="q5d">
+        <label for="q5d">Washington Agreement</label><br>
+        
+        <h2>Question 6: How do deforestation and forest degradation contribute to climate change?</h2>
+        <input type="radio" name="question6" value="reduces_carbon_sequestration" id="q6a">
+        <label for="q6a">Reduces carbon sequestration</label><br>
+        <input type="radio" name="question6" value="releases_carbon_dioxide" id="q6b">
+        <label for="q6b">Releases carbon dioxide</label><br>
+        <input type="radio" name="question6" value="disrupts_ecosystems" id="q6c">
+        <label for="q6c">Disrupts ecosystems</label><br>
+        <input type="radio" name="question6" value="all_of_the_above" id="q6d">
+        <label for="q6d">All of the above</label><br>
+        <br>
+        
+        <button type="submit" class ="quizButton">Submit Quiz</button>
+    </form>
+    
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get user's answers
+            const answer1 = document.querySelector('input[name="question1"]:checked');
+            const answer2 = document.querySelector('input[name="question2"]:checked');
+            const answer3 = document.querySelector('input[name="question3"]:checked');
+            const answer4 = document.querySelector('input[name="question4"]:checked');
+            const answer5 = document.querySelector('input[name="question5"]:checked');
+            const answer6 = document.querySelector('input[name="question6"]:checked');
+
+            let score = 0;
+            if (answer1 && answer1.value == "carbon_dioxide") {
+                score++;
+            }
+            if (answer2 && answer2.value == "energy_production") {
+                score++;
+            }
+            if (answer3 && answer3.value == "all_of_the_above") {
+                score++;
+            }
+            if (answer4 && answer4.value == "all_of_the_above") {
+                score++;
+            }
+            if (answer5 && answer5.value == "paris_agreement") {
+                score++;
+            }
+            if (answer6 && answer6.value == "all_of_the_above") {
+                score++;
+            }
+            
+            // Display score
+            alert("Your score: " + score + "/6");
+        });
+    </script>
+</body>
+</html>
+        

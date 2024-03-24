@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="flex-container">
+        <!-- Image Container -->
+        <div class="image-container">
+            <img src="images/logo.jpeg" alt="Descriptive Text" style="width: 100%; height: auto;">
+        </div>
+
+        <!-- Login Form Container -->
+        <div class="login-container">
+            <h2>Login</h2>
+            <form id="loginForm" class="form">
+                <div class="input-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        // JavaScript for form submission
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            // Add your form submission logic here
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Retrieve stored username and password from localStorage
+            const storedUsername = localStorage.getItem("username");
+            const storedPassword = localStorage.getItem("password");
+
+            // Check if username and password are correct
+            if (username == storedUsername && password == storedPassword) {
+                alert("Login successful!"); // Display success message
+                window.location.href = "IntroClimateConnect.html"; // Redirect to dashboard or perform other actions
+            } else {
+                alert("Invalid username or password."); // Display error message
+            }
+        });
+    </script>
+    <button onclick="redirectHome()">Home</button>
+    <script>
+        function redirectHome() {
+            window.location.href = "home.html";
+        }
+    </script>
+</body>
+</html>
+
+
