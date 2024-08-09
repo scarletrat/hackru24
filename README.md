@@ -1,4 +1,4 @@
-Run the home.html first.
+Run the home.html first. https://scarletrat.github.io/hackru24/Hackathon/home.html
 
 Description of Project- Welcome to Climate Connect, your go to destination for learning about and taking action on climate change. Our website is designed to make it easy for young people to understand the issues and make a positive impact.
 
